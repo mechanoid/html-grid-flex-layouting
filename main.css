@@ -6,6 +6,13 @@
     padding: 0;
 }
 
+/* ─── Page grid ────────────────────────────────────────────────────────────
+   Two-column, two-row grid filling the viewport.
+   col 1: aside  — minmax(200px, 400px)
+   col 2: main   — 1fr (remaining width)
+   row 1: header — auto (grows with content)
+   row 2: content area — 1fr (remaining height after header)
+   ─────────────────────────────────────────────────────────────────────── */
 body {
     display: grid;
     grid-template-columns: minmax(200px, 400px) 1fr;
@@ -15,6 +22,7 @@ body {
     height: 100vh;
 }
 
+/* grid row 1: spans both columns (col 1 → col -1) */
 header-element {
     grid-column: 1 / -1;
     display: block;
@@ -30,6 +38,8 @@ header-element .teaser {
     border: 1px solid green;
 }
 
+/* grid row 2, col 1 — flex column so #level-1 can stretch to fill height.
+   min-height: 0 prevents the grid cell from overflowing its 1fr row. */
 aside {
     border: 2px dashed #aaa;
     background: #fff;
@@ -40,6 +50,8 @@ aside {
     overflow: hidden;
 }
 
+/* flex column inside aside — flex-grow: 1 stretches it to fill aside's height.
+   Contains: input (fixed) + #level-2 (scrollable, takes remaining space). */
 #level-1 {
     border: 1px solid red;
     display: flex;
@@ -58,9 +70,10 @@ aside {
     background: #fafafa;
     font-size: 0.875rem;
 }
+/* grows to fill remaining height of #level-1 after the input; scrolls overflow */
 #level-2 {
     border: 1px blue;
-
+    flex-grow: 1;
     overflow-y: scroll;
 }
 
@@ -73,6 +86,8 @@ aside {
     height: 300px;
 }
 
+/* grid row 2, col 2 — fills remaining width (1fr).
+   min-height: 0 prevents overflow of the 1fr row; overflow: auto adds scroll if needed. */
 main {
     padding: 1.5rem;
     background: #fff;

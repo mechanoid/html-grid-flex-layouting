@@ -6,13 +6,24 @@
         <title>Document</title>
         <link rel="stylesheet" href="main.css" />
     </head>
+    <!--
+        body: 2-column grid, 2 rows
+          row 1 (auto)  — header-element spans both columns
+          row 2 (1fr)   — aside | main, fills remaining viewport height
+    -->
     <body>
+        <!-- grid row 1: grid-column 1 / -1 (full width) -->
         <header-element
             ><div class="teaser">Dynamic Header Element</div></header-element
         >
+
+        <!-- grid row 2, column 1: flex column, fixed width (200–400px) -->
         <aside id="root">
+            <!-- flex column, grows to fill aside height -->
             <div id="level-1">
+                <!-- static header of the list -->
                 <input type="text" placeholder="filter..." />
+                <!-- overflow-y: scroll — scrollable item list -->
                 <div id="level-2">
                     <div class="item">Item One</div>
                     <div class="item">Item Two</div>
@@ -24,6 +35,8 @@
                 </div>
             </div>
         </aside>
+
+        <!-- grid row 2, column 2: fills remaining width (1fr), overflow-y: auto -->
         <main>
             <h1>Welcome</h1>
             <p>This is an example paragraph with some introductory content.</p>
