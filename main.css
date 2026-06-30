@@ -17,24 +17,16 @@ body {
     display: grid;
     grid-template-columns: minmax(200px, 400px) 1fr;
     grid-template-rows: auto 1fr;
-    font-family: sans-serif;
-    background: #f5f5f5;
     height: 100vh;
 }
 
 /* grid row 1: spans both columns (col 1 → col -1) */
 header-element {
     grid-column: 1 / -1;
-    display: block;
-    padding: 0.75rem 1rem;
-    background: #fff;
-    border-bottom: 2px dashed #aaa;
-    font-size: 1rem;
-    color: #333;
 }
 
 header-element .teaser {
-    height: 300px;
+    height: 300px; /* just something to have smth with a height to push elements down */
     border: 1px solid green;
 }
 
@@ -42,7 +34,6 @@ header-element .teaser {
    min-height: 0 prevents the grid cell from overflowing its 1fr row. */
 aside {
     border: 2px dashed #aaa;
-    background: #fff;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -58,7 +49,6 @@ aside {
     gap: 0.5rem;
     margin-top: 0.75rem;
     height: 100%; /* gives the level-1 element a height, equal to the asic  */
-    flex-grow: 1; /* necessary to restrict the height to the available, vertical space */
     padding: 1rem;
 }
 
@@ -66,12 +56,20 @@ aside {
 #level-2 {
     border: 1px blue;
     overflow-y: scroll;
+    /*display: flex; THIS KILLS EVERYTHING!!!
+    flex-direction: column;*/
 }
 
 .item {
     padding: 0.5rem 0.75rem;
     border: 1px solid #bbb;
     height: 300px; /* gives the items enough height, so that we see scrolling */
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.item:last-of-type {
+    margin-bottom: 0;
 }
 
 /* NOT IMPORTANT as this just floats to the right */
