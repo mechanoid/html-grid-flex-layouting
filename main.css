@@ -58,32 +58,20 @@ aside {
     flex-direction: column;
     gap: 0.5rem;
     margin-top: 0.75rem;
-    flex-grow: 1;
-    height: 100%;
+    height: 100%; /* gives the level-1 element a height, equal to the aside element  */
     padding: 1rem;
 }
 
-#level-1 input {
-    width: 100%;
-    padding: 0.4rem 0.5rem;
-    border: 1px solid #aaa;
-    background: #fafafa;
-    font-size: 0.875rem;
-}
 /* grows to fill remaining height of #level-1 after the input; scrolls overflow */
 #level-2 {
     border: 1px blue;
-    flex-grow: 1;
     overflow-y: scroll;
 }
 
 .item {
     padding: 0.5rem 0.75rem;
     border: 1px solid #bbb;
-    background: #f0f0f0;
-    font-size: 0.875rem;
-    color: #333;
-    height: 300px;
+    height: 300px; /* gives the items enough height, so that we see scrolling */
 }
 
 /* grid row 2, col 2 — fills remaining width (1fr).
@@ -93,6 +81,22 @@ main {
     background: #fff;
     min-height: 0;
     overflow: auto;
+}
+
+/* JUST DESIGN IGNORE!!*/
+/* JUST DESIGN IGNORE!!*/
+/* JUST DESIGN IGNORE!!*/
+/* JUST DESIGN IGNORE!!*/
+/* JUST DESIGN IGNORE!!*/
+/* JUST DESIGN IGNORE!!*/
+/* JUST DESIGN IGNORE!!*/
+
+#level-1 input {
+    width: 100%;
+    padding: 0.4rem 0.5rem;
+    border: 1px solid #aaa;
+    background: #fafafa;
+    font-size: 0.875rem;
 }
 
 main h1 {
