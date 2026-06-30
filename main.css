@@ -47,7 +47,6 @@ aside {
     display: flex;
     flex-direction: column;
     min-height: 0;
-    overflow: hidden;
 }
 
 /* flex column inside aside — flex-grow: 1 stretches it to fill aside's height.
@@ -58,7 +57,8 @@ aside {
     flex-direction: column;
     gap: 0.5rem;
     margin-top: 0.75rem;
-    height: 100%; /* gives the level-1 element a height, equal to the aside element  */
+    height: 100%; /* gives the level-1 element a height, equal to the asic  */
+    flex-grow: 1; /* necessary to restrict the height to the available, vertical space */
     padding: 1rem;
 }
 
@@ -74,6 +74,7 @@ aside {
     height: 300px; /* gives the items enough height, so that we see scrolling */
 }
 
+/* NOT IMPORTANT as this just floats to the right */
 /* grid row 2, col 2 — fills remaining width (1fr).
    min-height: 0 prevents overflow of the 1fr row; overflow: auto adds scroll if needed. */
 main {
